@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign in | Vondante Market</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap');
+
+        :root {
+            --ink: #18251e;
+            --muted: #6d786f;
+            --green: #1f6b4d;
+            --dark: #123f2d;
+            --cream: #f7f4ed;
+            --paper: #fffdf8;
+            --line: #e1e4da;
+            --orange: #ec7746;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            align-items: center;
+            background: linear-gradient(135deg, #e5efe4 0%, var(--cream) 55%, #f8ddd0 100%);
+            color: var(--ink);
+            display: flex;
+            font-family: 'DM Sans', sans-serif;
+            justify-content: center;
+            margin: 0;
+            min-height: 100vh;
+            padding: 24px;
+        }
+
+        .login-shell {
+            background: var(--paper);
+            border: 1px solid rgba(255, 255, 255, .8);
+            border-radius: 12px;
+            box-shadow: 0 22px 70px rgba(27, 55, 41, .15);
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            max-width: 900px;
+            overflow: hidden;
+            width: 100%;
+        }
+
+        .welcome {
+            background: var(--dark);
+            color: #eef7f0;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            min-height: 540px;
+            padding: 48px;
+            position: relative;
+        }
+
+        .welcome:after {
+            border: 1px solid rgba(255, 255, 255, .17);
+            border-radius: 50%;
+            content: '';
+            height: 260px;
+            position: absolute;
+            right: -90px;
+            top: 80px;
+            width: 260px;
+        }
+
+        .brand {
+            color: #fff;
+            font-family: 'Playfair Display', serif;
+            font-size: 1.65rem;
+        }
+
+        .brand small {
+            color: #f4a17e;
+            display: block;
+            font: 700 .62rem 'DM Sans', sans-serif;
+            letter-spacing: .18em;
+            margin-top: 4px;
+        }
+
+        .welcome-copy {
+            position: relative;
+            z-index: 1;
+        }
+
+        .eyebrow {
+            color: #f4a17e;
+            font-size: .72rem;
+            font-weight: 700;
+            letter-spacing: .17em;
+            text-transform: uppercase;
+        }
+
+        h1 {
+            font: 700 clamp(2.3rem, 4vw, 3.8rem)/1.02 'Playfair Display', serif;
+            letter-spacing: -.04em;
+            margin: 18px 0;
+            max-width: 350px;
+        }
+
+        .welcome p {
+            color: #c9dbce;
+            line-height: 1.7;
+            max-width: 320px;
+        }
+
+        .quote {
+            color: #b6cbbd;
+            font-size: .8rem;
+            margin: 0;
+        }
+
+        .form-panel {
+            padding: clamp(32px, 6vw, 70px);
+        }
+
+        .form-panel h2 {
+            font: 700 2rem 'Playfair Display', serif;
+            margin: 0 0 8px;
+        }
+
+        .subtext {
+            color: var(--muted);
+            font-size: .9rem;
+            margin-bottom: 34px;
+        }
+
+        label {
+            display: block;
+            font-size: .78rem;
+            font-weight: 700;
+            margin: 18px 0 8px;
+        }
+
+        input {
+            background: #fff;
+            border: 1px solid var(--line);
+            border-radius: 5px;
+            color: var(--ink);
+            font: inherit;
+            outline: none;
+            padding: 14px;
+            width: 100%;
+        }
+
+        input:focus {
+            border-color: var(--green);
+            box-shadow: 0 0 0 3px rgba(31, 107, 77, .1);
+        }
+
+        .login-button {
+            background: var(--green);
+            border: 0;
+            border-radius: 5px;
+            color: #fff;
+            cursor: pointer;
+            font: 700 .9rem 'DM Sans', sans-serif;
+            margin-top: 26px;
+            padding: 15px;
+            width: 100%;
+        }
+
+        .login-button:hover {
+            background: var(--dark);
+        }
+
+        .hint {
+            color: var(--muted);
+            font-size: .75rem;
+            line-height: 1.5;
+            margin-top: 18px;
+            text-align: center;
+        }
+
+        .account-link {
+            background: none;
+            border: 0;
+            color: var(--green);
+            cursor: pointer;
+            display: block;
+            font: 700 .82rem 'DM Sans', sans-serif;
+            margin: 22px auto 0;
+            text-decoration: underline;
+        }
+
+        @media (max-width:650px) {
+            body {
+                padding: 12px;
+            }
+
+            .login-shell {
+                display: block;
+            }
+
+            .welcome {
+                min-height: 300px;
+                padding: 32px;
+            }
+
+            .welcome h1 {
+                font-size: 2.5rem;
+            }
+
+            .quote {
+                display: none;
+            }
+
+            .form-panel {
+                padding: 32px;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <main class="login-shell">
+        <section class="welcome">
+            <a class="brand" href="index.HTML">Vondante<small>GLOBAL MARKET</small></a>
+            <div class="welcome-copy"><span class="eyebrow">Welcome back</span>
+                <h1>Good things are waiting.</h1>
+                <p>Sign in to explore natural care, pantry staples, and fresh essentials selected for everyday living.
+                </p>
+            </div>
+            <p class="quote">Thoughtful goods. Simple living.</p>
+        </section>
+        <section class="form-panel">
+            <h2>Sign in</h2>
+            <p class="subtext">Use your account details to continue.</p>
+            <form id="loginForm">
+                <label for="email">Email address</label><input type="email" id="email" name="email"
+                    placeholder="you@example.com" autocomplete="email" required>
+                <label for="password">Password</label><input type="password" id="password" name="password"
+                    placeholder="Enter your password" autocomplete="current-password" required>
+                <button class="login-button" type="submit">Continue to store</button>
+            </form>
+            <button class="account-link" id="showRegister" type="button">Create a new account</button>
+            <div id="registerBox" hidden>
+                <hr>
+                <h3>Create an account</h3>
+                <form id="registerForm">
+                    <label for="registerEmail">Email address</label>
+                    <input type="email" id="registerEmail" placeholder="new@example.com" required>
+                    <label for="registerPassword">Password</label>
+                    <input type="password" id="registerPassword" placeholder="At least 6 characters" minlength="6"
+                        required>
+                    <button class="login-button" type="submit">Create account</button>
+                </form>
+                <p class="hint" id="registerMessage"></p>
+            </div>
+        </section>
+    </main>
+    <script src="database.js"></script>
+    <script>
+        document.getElementById('loginForm').addEventListener('submit', event => {
+            event.preventDefault();
+            const email = document.getElementById('email').value.trim();
+            const password = document.getElementById('password').value;
+            const user = getUser(email, password);
+            if (user) {
+                localStorage.setItem('vondanteUser', JSON.stringify({ email: user.email, role: user.role }));
+                window.location.href = 'dashboard.html';
+            }
+            else alert('Wrong email or password. Please try again.');
+        });
+
+
+        document.getElementById('registerForm').addEventListener('submit', event => {
+            event.preventDefault();
+            const email = document.getElementById('registerEmail').value.trim();
+            const password = document.getElementById('registerPassword').value;
+            const message = document.getElementById('registerMessage');
+            message.textContent = registerUser(email, password) ? 'Account created. You can now sign in.' : 'Email already used or password is too short.';
+            if (message.textContent.startsWith('Account')) event.target.reset();
+        });
+
+        document.getElementById('showRegister').addEventListener('click', event => {
+            const box = document.getElementById('registerBox');
+            box.hidden = !box.hidden;
+            event.target.textContent = box.hidden ? 'Create a new account' : 'Hide account form';
+        });
+    </script>
+
+
+
+
+
+</body>
+
+</html>

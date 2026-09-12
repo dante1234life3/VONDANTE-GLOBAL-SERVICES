@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vondante Market</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="topbar">Fresh finds for a better everyday / Free delivery on orders over $50</div>
+
+    <header>
+        <a class="brand" href="dashboard.html">Vondante<small>GLOBAL MARKET</small></a>
+        <nav><a href="#shop">Shop</a><a href="#about">About</a></nav>
+        <div class="actions">
+            <input class="theme-check" id="themeToggle" type="checkbox">
+            <label class="theme" for="themeToggle">Dark mode</label>
+            <button class="theme" id="warmButton" type="button">Warm</button>
+            <details class="location">
+                <summary class="theme">Location</summary>
+                <div class="location-panel">
+                    <input id="countryName" list="countryList" placeholder="Type your country">
+                    <datalist id="countryList">
+                        <option value="Nigeria">
+                        <option value="United States">
+                        <option value="United Kingdom">
+                        <option value="Ghana">
+                    </datalist>
+                    <select id="country">
+                        <option value="NGN" data-states="Lagos,Ogun,Abuja,Kano">Nigeria - ₦</option>
+                        <option value="USD" data-states="California,Texas,New York">United States - $</option>
+                        <option value="GBP" data-states="London,Manchester,Liverpool">United Kingdom - £</option>
+                        <option value="GHS" data-states="Accra,Kumasi,Tamale">Ghana - GH₵</option>
+                    </select>
+                    <select id="state"></select>
+                    <select id="language">
+                        <option value="en">English</option>
+                        <option value="yo">Yoruba</option>
+                        <option value="ig">Igbo</option>
+                        <option value="ha">Hausa</option>
+                    </select>
+                </div>
+            </details>
+            <details class="cart">
+                <summary class="bag">Cart <span id="cartCount">0</span></summary>
+                <div class="cart-panel">
+                    <h3>Your cart</h3>
+                    <ul id="cartList"></ul>
+                    <p id="cartEmpty">Your cart is empty.</p>
+                    <a class="shop" href="#shop">Continue shopping</a>
+                    <p class="order-total">Total: $<span id="cartTotal">0.00</span></p>
+                    <form id="checkoutForm">
+                        <input id="customerEmail" type="email" placeholder="Your email address" required>
+                        <input id="address" type="text" placeholder="Delivery address" required>
+                        <select id="delivery" required>
+                            <option value="">Choose delivery</option>
+                            <option value="5">GIG Logistics standard - $5</option>
+                            <option value="10">GIG Logistics express - $10</option>
+                        </select>
+                        <a id="mapLink" class="map-link" target="_blank" rel="noopener" hidden>Open address in Google
+                            Maps</a>
+                        <button class="shop" type="submit">Place order</button>
+                    </form>
+                    <p id="orderMessage" class="order-message"></p>
+                </div>
+            </details>
+            <a class="logout" id="logoutButton" href="index.HTML">Log out</a>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero" id="about">
+            <div class="hero-copy"><span class="eyebrow">Small rituals, big difference</span>
+                <h1>Good things for your everyday.</h1>
+                <p>Natural care, pantry staples and fresh essentials from Vondante Global Services.</p><a class="shop"
+                    href="#shop">Shop now</a>
+            </div>
+            <div class="hero-image" role="img" aria-label="Natural oils and botanicals"></div>
+        </section>
+
+        <section class="heading" id="shop">
+            <div><span class="eyebrow">The collection</span>
+                <h2>Customer favourites</h2>
+            </div>
+            <p>8 products</p>
+        </section>
+        <div class="toolbar">
+            <div class="filters"><a class="filter active" data-category="all" href="#shop">All</a><a class="filter"
+                    data-category="care" href="#care">Care</a><a class="filter" data-category="pantry"
+                    href="#pantry">Pantry</a><a class="filter" data-category="fresh" href="#fresh">Fresh</a></div><input
+                class="search" id="search" type="search" placeholder="Search products..." aria-label="Search products">
+        </div>
+
+        <section class="products" aria-label="Products">
+            <article class="card" id="care" data-category="care">
+                <div class="photo">
+                    <img src="coconut-oil.jpg" alt="Coconut oil">
+                    <span class="tag">Best seller</span>
+                </div>
+                <div class="details">
+                    <h3>Coconut Oil</h3>
+                    <p>Pure oil for cooking and skin care.</p>
+                    <div class="row"><b class="price" data-ngn="4000">₦4,000</b><button class="add" type="button">Add to
+                            cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="care">
+                <div class="photo">
+                    <img src="blood-tonic.jpg" alt="Black soap">
+                    <span class="tag">Natural</span>
+                </div>
+                <div class="details">
+                    <h3>Black Soap</h3>
+                    <p>Gentle plant-based cleanser.</p>
+                    <div class="row"><b c class="price" data-ngn="4000">₦4,000</b><button class="add" type="button">Add
+                            to cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="care">
+                <div class="photo">
+                    <img src="black-soap.jpg" alt="Dr Nelson blood tonic">
+                    <span class="tag">New</span>
+                </div>
+                <div class="details">
+                    <h3>Blood Tonic</h3>
+                    <p>Wellness tonic bottle placeholder.</p>
+                    <div class="row"><b class="price" data-ngn="4000">₦4,000</b><button class="add" type="button">Add to
+                            cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" id="pantry" data-category="pantry">
+                <div class="photo">
+                    <img src="orange-peel.jpg" alt="Orange peel">
+                    <span class="tag">New</span>
+                </div>
+                <div class="details">
+                    <h3>Orange Peel</h3>
+                    <p>for further production.</p>
+                    <div class="row"><b class="price" data-ngn="2000">₦2,000</b><button class="add" type="button">Add to
+                            cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="care">
+                <div class="photo">
+                    <img src="neem-powder.jpg" alt="Green neem leaves and powder">
+                    <span class="tag">Popular</span>
+                </div>
+                <div class="details">
+                    <h3>Neem Powder</h3>
+                    <p>Green ground leaf powder for your routine.</p>
+                    <div class="row"><b class="price" data-ngn="2000">₦2,000</b><button class="add" type="button">Add to
+                            cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" data-category="care">
+                <div class="photo">
+                    <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?auto=format&fit=crop&w=800&q=85"
+                        alt="Bowl of vegetables">
+                </div>
+                <div class="details">
+                    <h3>NATURAL RESET</h3>
+                    <p>A Tutorial for your diet plan.</p>
+                    <div class="row"><b class="price" data-ngn="2000">₦2,000</b><button class="add" type="button">Add to
+                            cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card" id="fresh" data-category="fresh">
+                <div class="photo">
+                    <img src="catfish.jpg" alt="smoked catfish">
+                    <span class="tag">Fresh</span>
+                </div>
+                <div class="details">
+                    <h3>Catfish</h3>
+                    <p>Fresh fish ready for your next meal.</p>
+                    <div class="row"><b class="price" data-ngn="2000">₦2,000</b><button class="add" type="button">Add to
+                            cart</button>
+                    </div>
+                </div>
+            </article>
+            <article class="card snail-menu" data-category="fresh">
+                <div class="photo">
+                    <img src="alive-snail.jpg" alt="snail">
+                    <span class="tag">Snail</span>
+                </div>
+                <div class="details">
+                    <h3>Snail</h3>
+                    <p>Choose how you want your snail prepared.</p>
+                    <details>
+                        <summary>Choose snail type</summary>
+                        <button class="add snail-choice" data-name="Washed Snail" data-price="10000"
+                            type="button">Washed Snail</button>
+                        <button class="add snail-choice" data-name="Dry Snail" data-price="10000" type="button">Dry
+                            Snail</button>
+                        <button class="add snail-choice" data-name="Frozen Snail" data-price="10000"
+                            type="button">Frozen Snail</button>
+                    </details>
+                </div>
+            </article>
+        </section>
+    </main>
+
+    <footer>© 2026 Vondante Global Services · Thoughtful goods for everyday living</footer>
+    <script src="dashboard.js"></script>
+</body>
+
+</html>
